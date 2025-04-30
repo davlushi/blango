@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Tag, Post
+from blog.models import Tag, Post, Comment
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -9,3 +9,8 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Tag)
 # admin.site.register(Post, PostAdmin)
+
+# admin.site.register(Comment)
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    raw_id_fields = ["creator"]
