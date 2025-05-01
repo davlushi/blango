@@ -18,6 +18,9 @@ class Comment(models.Model):
    object_id = models.PositiveIntegerField()
    created_at = models.DateTimeField(auto_now_add=True)
    modified_at = models.DateTimeField(auto_now=True)
+
+   def __str__(self):
+      return self.content
   
 
 class Post(models.Model):
